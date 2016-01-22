@@ -1,0 +1,6 @@
+<system max_period="4000" min_period="4000" os_scheduler="EDF">
+	<oldComponent max_period="2000" min_period="2000" name="comp1" scheduler="EDF">
+		<oldTask d="37.0" e="7.40" name="t1" p="37.0"/>
+	</oldComponent>
+	
+</system>
