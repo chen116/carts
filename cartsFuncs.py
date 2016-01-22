@@ -37,6 +37,7 @@ util = []
 taskset_files_names=[]
 print util_range
 def run_CARTS_all():
+	subprocess.call(["mkdir","-p",CARTS_OUTPUT_FILE])
 	print taskset_files_names
 	# for i in dist:
 	# 	for j in util_range:
@@ -73,6 +74,7 @@ def run_CARTS_all():
 
 
 def create_input_files_for_CARTS():
+	subprocess.call(["mkdir","-p",CARTS_INPUT_FILE ])
 	for i in dist:
 		for j in util_range:
 			for k in iters:
@@ -243,7 +245,7 @@ if __name__ == "__main__":
 
 	# run_CARTS(rtDict)
 	create_input_files_for_CARTS()
-	# run_CARTS_all()
+	run_CARTS_all()
 	ts=time.time()
 	print datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 	print "DONE"
