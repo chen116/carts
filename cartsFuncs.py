@@ -26,9 +26,9 @@ CARTS_LOCATION = './Carts.jar'
 CARTS_MODEL = "MPR"
 
 dist = ['uni-light','uni-medium']
-lower_b= 4.0
-upper_b= 4.6
-step = 0.6
+lower_b = 0.2
+upper_b = 8.4
+step = 0.2
 
 
 util_range = numpy.linspace(lower_b,upper_b,round((upper_b-lower_b)/step + 1))
@@ -68,8 +68,11 @@ def run_CARTS_all():
 			CARTS_MODEL, 
 			CARTS_OUTPUT_FILE+ 'out_'+xml_file_name
 			],stderr = cart_stderr, stdout = cart_stdout)
+		subprocess.call(["rm","./Ak_max.log"])
+		subprocess.call(["rm","./run.log"])
 	cart_stdout.close()
 	cart_stderr.close()
+
 
 
 
